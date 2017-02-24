@@ -1,5 +1,5 @@
+import { MediaDetailsComponent } from './media-details/media-details.component';
 import { MediaFormComponent } from './media-form/media-form.component';
-import { MediaItemComponent } from './media-item/media-item.component';
 import { MediaListComponent } from './media-list/media-list.component';
 import { MediasComponent } from './medias.component';
 
@@ -10,8 +10,8 @@ export const mediasRoutes : Routes = [
     component: MediasComponent,
     children: [
         {path: 'list', component: MediaListComponent},
-        {path: ':id', component: MediaItemComponent},
-        {path: 'add', component: MediaFormComponent}
+        {path: 'add', component: MediaFormComponent},
+        {path: ':id', component: MediaDetailsComponent}
     ]
 }
     

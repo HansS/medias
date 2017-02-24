@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { MediaItem } from './../media-item/media-item.model';
+import { MediasService } from './../medias.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'media-list',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaListComponent implements OnInit {
 
-  constructor() { }
+  items = [];
+  subscription: any;
+  constructor(private service: MediasService) { }
 
   ngOnInit() {
+   this.subscription = this.service.getMediaItems()
+      .subscribe(ms => this.items = ms);
   }
 
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
+
+  onMediaItemDelete(mediaItem){
+    console.log(mediaItem);
+    
+  }
 }

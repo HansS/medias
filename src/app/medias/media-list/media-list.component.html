@@ -1,3 +1,5 @@
-<p>
-  media-list works!
-</p>
+<div>{{ items | distinctCategories }}</div>
+   
+<media-item *ngFor="let mediaItem of items" [mediaItem]="mediaItem" (delete)="onMediaItemDelete($event)">
+
+</media-item>

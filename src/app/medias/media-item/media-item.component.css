@@ -1,0 +1,15 @@
+.favorite {
+  width: 24px;
+  height: 24px;
+  fill: #bdc2c5;
+
+}
+.favorite.is-favorite {
+    fill: red;
+}
+.favorite.is-favorite-hovering {
+    fill: #45bf94;
+}
+.favorite.is-favorite.is-favorite-hovering {
+    fill: #ec4342;
+}
